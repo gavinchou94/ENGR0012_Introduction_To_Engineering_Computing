@@ -14,31 +14,43 @@ int main()
   z = x + y; // Addition
   c = a * b; // Multiplication
 
-  printf("Addition (int): Z = %d\n", z);
-  printf("Multiplication (double): C = %lf\n", c);
+  printf("Addition (int): z = %d\n", z);
+  printf("Multiplication (double): c = %lf\n", c);
 
   // Division examples
-  z = x / y; // Integer division yields only the quotient int
+  z = x / y; // Integer division yields only the quotient as an int
   c = a / b; // Double division yields the full double result
 
-  printf("Integer Division: Z = %d\n", z);
-  printf("Double Division: C = %lf\n", c);
+  printf("Integer Division: z = %d\n", z);
+  printf("Double Division: c = %lf\n", c);
 
   z = 5 / 2 * 3; // Take a guess what is z?
   c = 5 / 2 * 3; // Take a guess what is c?
   printf("z=%d\nc=%lf\n", z, c);
+  // The result is z=6, c=6.000000
+  // This is because 5/2 is evaluated as an integer division, which results in 2.
+  // Then, 2*3 equals 6.
+  // When 6 is assigned to z, it stays as int, resulting in 6
+  // When 6 is assigned to c, it is converted to a double, resulting in 6.000000
 
   z = 5.0 / 2 * 3; // Take a guess what is z?
   c = 5.0 / 2 * 3; // Take a guess what is c?
-  printf("another version:\nz=%d\nc=%lf\n", z, c);
+  printf("Another version:\nz=%d\nc=%lf\n", z, c);
+  // The another-version result is z=7, c=7.500000
+  // This is because 5.0/2 is evaluated as a double division, which results in 2.5
+  // Then, 2.5*3 equals 7.5.
+  // When 7 is assigned to z, it is converted to an int, resulting in 7
+  // When 7.5 is assigned to c, it stays as double, resulting in 7.500000
 
   // Remainder operation
   z = x % y; // Modulus operator
-  printf("Remainder: Z = %d\n", z);
+  printf("Remainder: z = %d\n", z);
+  // modulus is only valid for integers, if x or y is not int, it will give an error
 
   // Variables for demonstration
   double num1 = 2.0, num2 = 3.0, result;
-  double angle = 3.14159265358979323846 / 4; // 45 degrees in radians
+  double angle = 3.14159265358979323846 / 4; // (pi/4 in radians)
+  // Above is not a good practice, you should use M_PI from math.h
 
   // Exponentiation: num1 raised to the power of num2
   result = pow(num1, num2);
@@ -52,7 +64,7 @@ int main()
   result = log10(num1);
   printf("Logarithm Base 10: log10(%.2lf) = %.2lf\n", num1, result);
 
-  // Raising e to the power of num2
+  // Raising Euler constant e to the power of num2
   result = exp(num2);
   printf("Exponential: e^%.2lf = %.2lf\n", num2, result);
 
@@ -73,41 +85,41 @@ int main()
   result = sin(angle);
   printf("Sine: sin(%.2lf radians) = %.2lf\n", angle, result);
 
-  int x;
-  printf("Enter 1, 2, or 3: ");
-  scanf("%d", &x);
+  int X;
+  printf("Enter 1, 2, or 3 for X: ");
+  scanf("%d", &X);
 
-  if (x == 1)
+  if (X == 1)
   {
-    printf("x is 1\n");
+    printf("X is 1\n");
   }
 
-  int x;
-  printf("Enter 1, 2, or 3: ");
-  scanf("%d", &y);
+  int Y;
+  printf("Enter 1, 2, or 3 for Y: ");
+  scanf("%d", &Y);
 
-  if (y == 1)
+  if (Y == 1)
   {
-    printf("y is 1\n");
+    printf("Y is 1\n");
   }
   else
   {
     printf("Condition not met\n");
   }
 
-  int z;
-  printf("Enter 1, 2, or 3: ");
-  scanf("%d", &z);
+  int Z;
+  printf("Enter 1, 2, or 3 for Z: ");
+  scanf("%d", &Z);
 
-  if (z == 1)
+  if (Z == 1)
   {
-    printf("z is 1\n");
+    printf("Z is 1\n");
   }
-  else if (z == 2)
+  else if (Z == 2)
   {
     printf("z is 2\n");
   }
-  else if (z == 3)
+  else if (Z == 3)
   {
     printf("z is 3\n");
   }
@@ -117,7 +129,7 @@ int main()
   }
 
   char op;
-  printf("Enter A, B, or C: ");
+  printf("Enter A, B, or C for op: ");
   scanf(" %c", &op); // Note the space before %c to handle newline characters
 
   if (op == 'A')
@@ -138,6 +150,5 @@ int main()
   }
 
   // Now take a look at the HW7 structure
-
   return 0;
 }
