@@ -115,7 +115,7 @@ int main()
 	printf("z=%.3lf\n", z); // %.3lf is a flag for a double with 3 decimal places
 
 	printf("f=%7.3lf\n", f);
-	// %7.4lf means the total width of the number is 7
+	// %7.3lf means the total width of the number is 7
 	// including the decimal point and the digits before it
 	// If the number is less than 7 digits, it will be padded with spaces on left
 
@@ -185,7 +185,7 @@ int main()
 
 	// Using \n\n to show a blank line
 	printf("\nHere is a blank line in between:\n");
-	printf("abcd\n\nefgh\n\n\n");
+	printf("abcd\n\nabcd\n\n\n");
 
 	/* 03/13's Content: HW7 Hints
 	==============================================================
@@ -196,7 +196,7 @@ int main()
 	// Part 3:
 	// There is no breakline between "allow the printing".
 	// It is the display simply due to pdf rendering
-	// Similarily, this is applied to consequent paragraphs
+	// Similarly, this is applied to consequent paragraphs
 	// But there should be between "do you" and "understand" and "the code"
 	printf("do you\nunderstand\nthe code");
 
@@ -349,7 +349,7 @@ This is a percent sign:  %
 Here is a blank line in between:
 abcd
 
-efgh
+abcd
 
 
 03/13's Content: HW7 Hints

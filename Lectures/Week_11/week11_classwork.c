@@ -1,24 +1,84 @@
 #include <stdio.h>
 #include <stdlib.h>
-// what more do we need to include?
+#include <math.h> // Include math library for math functions
 
 int main()
 {
+  int a, b, c;
+  printf("Enter three integers for a/b/c, must be in ascending order:\n");
 
-  // Use scanf to get three int values to be a, b, c
-  // Show the area using printf if it's valid triangle
-  // else show "Invalid triangle"
+  printf("Enter a: ");
+  scanf("%d", &a);
 
-  // You have to calculate area based on
-  // S=0.5*a*b*sin(C)
-  // where sin(C) is calculated using the law of cosines, that's
-  // c^2 = a^2 + b^2 - 2ab*cos(C)
-  // sin(C) = sqrt(1 - cos^2(C))
+  printf("Enter b: ");
+  scanf("%d", &b);
 
-  // Then use switch-case to print if angle C is an acute right or obtuse angle
-  // Hints: cos(C)=0, C=90 degrees;
-  // cos(C)>0, C<90 degrees;
-  // cos(C)<0, C>90 degrees
+  printf("Enter c: ");
+  scanf("%d", &c);
+  // you can also use scanf("%d %d %d", &a, &b, &c);
+
+  printf("The three sides you entered are: %d, %d, %d\n", a, b, c);
+  if (a + b > c && a + c > b && b + c > a)
+  {
+    printf("The three sides a/b/c are valid for a triangle\n");
+
+    // first find cosC
+    double cosC;
+    cosC = (a * a + b * b - c * c) / (2.0 * a * b);
+    // wrong if cosC = (a^2+b^2-c^2)/(2.0 * a * b);
+    // wrong if cosC = (a*a+b*b-c*c)/(2 * a * b);
+    // correct if cosC = (pow(a,2)+pow(b,2)-pow(c,2))/(2.0 * a * b);
+
+    // now find sinC
+    double sinC;
+    sinC = sqrt(1 - cosC * cosC);
+    // it's okay to merge the above two lines into one line
+    // e.g., double sinC = sqrt(1 - pow(cosC, 2));
+
+    // finally find the area
+    double area;
+    area = 0.5 * a * b * sinC;
+    printf("The area of the triangle is %.2f\n", area);
+
+    // Then use switch-case to print if angle C is
+    // acute/right/obtuse angle
+    // Hints: cos(C)=0, C=90 degrees;
+    // cos(C)>0, C<90 degrees;
+    // cos(C)<0, C>90 degrees
+
+    char angle_type;
+    if (cosC == 0)
+    {
+      angle_type = 2; // right angle
+    }
+    else if (cosC > 0)
+    {
+      angle_type = 1; // acute angle
+    }
+    else
+    {
+      angle_type = 3; // obtuse angle
+    }
+
+    char output;
+    switch (angle_type)
+    {
+    case 1:
+      output = 'A';
+      break;
+    case 2:
+      output = 'R';
+      break;
+    case 3:
+      output = 'O';
+      break;
+    }
+    printf("Angle C is %c (A for acute, R for right, O for obtuse)\n\n", output);
+  }
+  else
+  {
+    printf("The three sides a/b/c cannot make a triangle\n\n");
+  }
   return 0;
 }
 
