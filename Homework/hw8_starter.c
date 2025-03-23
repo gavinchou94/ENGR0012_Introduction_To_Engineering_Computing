@@ -65,7 +65,7 @@ int main()
 }
 
 /**
- * Your code will be also maunally graded for the following:
+ * Your code will be also manually graded for the following:
  *
  * A. Include a comment with your name at the top.
  *
