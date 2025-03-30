@@ -5,7 +5,7 @@ int main()
 {
   // All the examples below are for chars and strings read
 
-  // Case 1: You know how many chars you want to receive from the user
+  // Case 1: You know how many chars to receive from the user
   // and want user to enter them one by one
   char initials[4];
   printf("Please enter your initials one by one:\n");
@@ -15,19 +15,15 @@ int main()
     // Note the space before %c to ignore any whitespace
   }
   printf("The work is done by %c.%c., %c.%c. for C classwork\n",
-         initials[0],
-         initials[1],
-         initials[2],
-         initials[3]);
+         initials[0], initials[1], initials[2], initials[3]);
 
   // Case 2: You don't know how many chars there are
-  // and want user to enter them all at once
+  // and just want user to enter them all at once
 
   // Declare a long char array to store the filename
   char filename[100];
   printf("Please enter the name of the file all at once: ");
-  scanf("%s", filename); // the flag is %s
-  // %s is the flag for printing string
+  scanf("%s", filename); // %s is the flag for printf/scanf string
   printf("The filename is: %s\n", filename);
 
   // Case 3: You don't know how many chars there are
@@ -43,8 +39,7 @@ int main()
   for (int i = 0; i < digit; i++)
   {
     printf("Please enter char #%d: ", i + 1);
-    scanf(" %c", &str[i]);
-    // Note the space before %c
+    scanf(" %c", &str[i]); // Note the space before %c
   }
   return 0;
 }

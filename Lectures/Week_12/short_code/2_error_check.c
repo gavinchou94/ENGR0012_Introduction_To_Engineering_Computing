@@ -35,20 +35,28 @@ int main()
   }
   printf("The valid letter grade entered is %c\n\n", LGrade2);
 }
+/*
+structure of do-while loop for error checking
 
-// structure of do-while loop for error checking
+MUST define var here
+do
+{
+  printf and scanf to get the var value;
+} while (var value is undesired);
 
-// do
-// {
-//   printf and scanf to get the var value;
-// } while (var value is undesired);
+example 1:
 
-// do
-// {
-//   printf and scanf to get the var value;
-// } while (op != 'Y' && op != 'N');
+MUST define op here
+do
+{
+  printf and scanf to get the var value;
+} while (op != 'Y' && op != 'N');
 
-// do
-// {
-//   printf and scanf to get the var value;
-// } while (num < 10 || num > 100);
+example 2:
+
+MUST define num here
+do
+{
+  printf and scanf to get the var value;
+} while (num < 10 || num > 100);
+*/

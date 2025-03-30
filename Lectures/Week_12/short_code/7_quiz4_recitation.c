@@ -33,6 +33,8 @@ int main()
   printf("d=%-5d$\n", d);     // use $ at the end to measure the width
   printf("t=%-6.2f$\n\n", t); // use $ at the end to measure the width
 
+  // -----------------------HANDOUT QUESTIONS--------------------------
+
   int i;
   int arr[5] = {2, 4, 6, 8, 10};
   int new_arr[7] = {5, 5, 5, 5, 5, 5, 5};
@@ -43,27 +45,29 @@ int main()
   }
 
   int j = 0;
-
   while (j < 6)
   {
     printf("%d\n", new_arr[j]);
     j = j + 1;
   }
   printf("z\nz\nz\nz\n\n");
+
   // if your output exceeds the given 8 lines
   // just show the first 8 lines
 
-  //--------------------------------------------------------------
-  // construct an int array of 8 element = 20, 25, 3, 25, 16, 30, 30, 79
-  // how to write a for-loop to find the average of the array?
-  // and print the average value!
+  //-----------------------MORE QUIZ 4 REVIEW--------------------------
+  // construct an int array of 8 elements = 20, 25, 3, 25, 16, 30, 30, 79
+  // how to use a for-loop to find the average of the array?
+  // and printf the average value!
+
   int arr2[8] = {20, 25, 3, 25, 16, 30, 30, 79};
   int sum2 = 0;
   for (i = 0; i <= 7; i++) // 0:7 in matlab
   {
     sum2 = sum2 + arr2[i];
   }
-  float average2 = sum2 / 8.0;
+
+  float average2 = sum2 / 8.0; // note 8.0 instead of 8
   printf("The average of the array is %.2f\n", average2);
 
   // first scanf two strings xxx and yyy

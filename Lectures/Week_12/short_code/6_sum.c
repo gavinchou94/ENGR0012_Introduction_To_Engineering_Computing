@@ -15,8 +15,7 @@ int main()
   printf("Sum of the array using for loop: %d\n", sum1);
 
   // Method 2: Using a while loop
-  int sum2 = 0;
-  int j = 0;
+  int sum2 = 0, j = 0;
   while (j < 5)
   {
     sum2 = sum2 + arr[j];
@@ -25,8 +24,7 @@ int main()
   printf("Sum of the array using while loop: %d\n", sum2);
 
   // Method 3: Using a do-while loop
-  int sum3 = 0;
-  int k = 0;
+  int sum3 = 0, k = 0;
   do
   {
     sum3 = sum3 + arr[k];
@@ -36,7 +34,6 @@ int main()
 
   // Advanced example of finding the sum of an array with known size
   // but elements are from user input
-
   int grades[5];
   int sum4 = 0;
   printf("Enter 5 grades:\n");

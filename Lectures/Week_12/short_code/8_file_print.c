@@ -40,7 +40,6 @@ int main()
   fprintf(filePointer, "Finished.");
 
   // Close the file
-  fclose(filePointer); // This is a must.
-                       // Syntax: fclose(any_name);
+  fclose(filePointer); // This is a must. Syntax: fclose(any_name);
   return 0;
 }
