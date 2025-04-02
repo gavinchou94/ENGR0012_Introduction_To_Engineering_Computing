@@ -17,3 +17,9 @@ int main()
   fclose(filePointer2);
   return 0;
 }
+
+// Declare ptr to a file
+// Ptr equals to fopen, in append mode
+// Check if ptr is NULL
+// if no, fprintf to the file (which literally appends)
+// finally, fclose the file

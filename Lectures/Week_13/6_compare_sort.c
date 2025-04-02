@@ -38,5 +38,32 @@ int main()
   }
   printf("\n");
 
+  int a, b;
+  printf("Enter number a: ");
+  scanf("%d", &a); // a=2
+  printf("Enter number b: ");
+  scanf("%d", &b); // b=3
+  int iteration = 0;
+
+  printf("it\tprod\n");
+  printf("--------------\n");
+
+  printf("%d\t%d\n", iteration, a);
+
+  iteration++;
+  printf("%d\t%d\n", iteration, b);
+
+  int c = a * b;
+  iteration++;
+  printf("%d\t%d\n", iteration, c);
+
+  while (c < 9999999)
+  {
+    a = b;       // Update first multiplicand to the second from the previous iteration
+    b = c;       // Update second multiplicand to the product from the previous iteration
+    c = a * b;   // Calculate the new product
+    iteration++; // Increment the iteration counter
+    printf("%d\t%d\n", iteration, c);
+  }
   return 0;
 }
