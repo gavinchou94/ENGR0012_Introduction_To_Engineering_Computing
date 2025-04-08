@@ -88,13 +88,18 @@ int main()
   printf("%d\t%d\n", iteration, b); // b=3
 
   int c = a * b;
+
   iteration++;
   printf("%d\t%d\n", iteration, c); // c=6=2*3
 
   while (c < 9999999)
   {
-    a = b;       // Update first multiplicand to the second from the previous iteration
-    b = c;       // Update second multiplicand to the product from the previous iteration
+    // Update first multiplicand to be the second from the previous iteration
+    a = b;
+
+    // Update second multiplicand to the product from the previous iteration
+    b = c;
+
     c = a * b;   // Calculate the new product
     iteration++; // Increment the iteration counter
     printf("%d\t%d\n", iteration, c);
@@ -115,7 +120,8 @@ int main()
   double result = 0;
   for (int i = 0; i < 10; i++)
   {
-    result = result + (newarr[i] - average) * (newarr[i] - average); // or using pow()
+    result = result + (newarr[i] - average) * (newarr[i] - average);
+    // or using pow()
   }
   double stddev = result / 9; // Sample standard deviation, divide by n-1
 
@@ -125,7 +131,8 @@ int main()
   printf("Create an output array of same size to store new information\n");
   printf("==============================================================\n");
   // Assuming we know that file "unknown_grades.txt" contains 521 grades
-  // Read it to an 1d array first, then create another char array to hold the letter grades
+  // Read it to an 1d array first
+  // then create another char array to hold the letter grades
 
   // letter grades are A, B, C, D, F (based on grade>90, 80, 70, 60)
   // write the letter grade array into a file called "letter_grades.txt"
@@ -148,7 +155,8 @@ int main()
 
     if (current_grade >= 80)
     {
-      B_above_count++; // Count the number of students with grades in the B category
+      B_above_count++;
+      // Count the number of students with grades in the B category
     }
 
     char current_letter_grade;
@@ -172,7 +180,8 @@ int main()
     {
       current_letter_grade = 'F';
     }
-    letter_grades[i] = current_letter_grade; // Store the letter grade in the array
+    letter_grades[i] = current_letter_grade;
+    // Store the letter grade in the array
   }
   fclose(fileptr6); // Close the file after reading
 
@@ -192,7 +201,8 @@ int main()
   fclose(output_file); // Close the output file
 
   printf("The number of students with grades above B: %d\n", B_above_count);
-  double percentage_B_above = (B_above_count / 521.0) * 100; // Calculate the percentage
+  double percentage_B_above = (B_above_count / 521.0) * 100;
+  // Calculate the percentage, use 521.0 to avoid integer division
   printf("Percentage of students with grades above B: %.2f%%\n\n", percentage_B_above);
 
   printf("Load an irregular text file to 2d array\n");
@@ -234,3 +244,63 @@ int main()
   }
   printf("\n");
 }
+
+/**
+Output of the program:
+
+
+Quiz 5 Part A Review
+==============================================================
+
+Starting the sequence...
+Handling base case
+t is 0
+Default case active
+t is 13
+Inside case 2
+t is now 145
+In case 3 now
+t is now 100
+Executing case 4
+t is 0
+Array snapshot: 11 39 15
+Final value of s: 5
+
+Classwork from Tuesday: Optional 5 Print 2 3 6 18 108 etc
+==============================================================
+
+Enter number a: 2
+Enter number b: 3
+
+it	prod
+--------------
+0	2
+1	3
+2	6
+3	18
+4	108
+5	1944
+6	209952
+7	408146688
+
+Find the standard deviation of an array
+==============================================================
+
+The average is: 35.20
+The standard deviation is: 813.29
+
+Create an output array of same size to store new information
+==============================================================
+
+The number of students with grades above B: 229
+Percentage of students with grades above B: 43.95%
+
+Load an irregular text file to 2d array
+==============================================================
+
+The 2D array is:
+1 2 3 4
+5 6 7 8
+9 10 11 12
+
+ */
