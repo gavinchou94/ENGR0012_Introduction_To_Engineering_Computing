@@ -1,16 +1,27 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 // Function prototypes
 void func1(void);                  // Function with no parameters and no return value
 void func2(int, int);              // Function with two parameters and no return value
 double func3(void);                // Function with no parameters and a return value
 double func4(int, double, double); // Function with three parameters and a return value
+void integrity(void);
+void printname(char, char);
+int cube_add(int, int);
 
 int main()
 {
   // Call func1
   func1();
+
+  // call a function to print an integrity statement
+  integrity();
+
+  // call a function to print your two initials
+  char op = 'L', op2 = 'A';
+  printname(op, op2);
 
   // Call func2 with two arguments
   func2(5, 10);
@@ -26,9 +37,13 @@ int main()
   // Call func4 with two arguments and store its return value
   // When you call it, make sure (1) order of parameters is correct
   // and (2) types of parameters are correct
-  double x = 5.5, y = 10.5;
-  double result2 = func4(10, x, y);
-  printf("Result from func4: %.2f\n", result2);
+  double a = 5.5, b = 10.5;
+  double result2 = func4(10, a, b);
+  printf("Result from func4: %.2f\n", result2); // it would be just (10+a-b)*1.5
+
+  int result3;
+  int x = 4, y = 6;
+  result3 = cube_add(x, y); // Call the function and store the result
 
   // Variables passed to/from the function and main do not need to have the same variable names
   // the program will look at the order of the variables, not the names
@@ -36,7 +51,28 @@ int main()
   return 0;
 }
 
-// Function definitions
+//--------------------------------------------------------
+// Below are function definitions
+//--------------------------------------------------------
+
+void integrity(void)
+{
+  printf("I, have completed this assignment with integrity\n");
+}
+
+void printname(char op, char op2)
+{
+  printf("My name is %c.%c.\n", op, op2);
+}
+
+int cube_add(int a, int b)
+{
+  int result;
+  result = pow(a, 3) + pow(b, 3);
+  return result;
+  // You must have a return statement in a function that has a return type other than void
+  // The return statement must match the return type of the function
+}
 
 // 1. Function with no parameters and no return value
 void func1(void)
@@ -64,7 +100,10 @@ double func3(void)
 double func4(int a, double b, double c)
 {
   printf("This is func4: Received parameters a = %d, b = %lf. c=%lf, returns value (a+b-c)*1.5 to main.\n", a, b, c);
-  return (a + b - c) * 1.5; // Example calculation and return value
+  return (a + b - c) * 1.5;
+  // interpret the return statement as:
+  // first parameter plus second parameter minus third parameter, then result times 1.5
+  // name of these three parameters does not matter
 }
 
 // C programming with functions workflow
